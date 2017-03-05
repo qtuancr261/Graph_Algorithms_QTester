@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <title>DFS Algoritm</title>
+</head>
+
+<body>
+  <h1>Thuật toán DFS - Depth first search </h1>
+  <ul>
+    <li> Rất thích hợp cho việc kiểm tra các đặc trưng của một đồ thị bất kỳ (vô hướng/có hướng).</li>
+    <li>
+      <dl>
+        <dt>Trò chơi tìm đường khi lạc vào một mê cung và thuật toán tìm đường</dt>
+        <dd> Sử dụng thuật toán DFS khi duyệt một đồ thị tương tự với trò chơi tìm đường khi lạc vào một mê cung. Hãy tưởng tượng mê cung là một đồ thị vô hướng, mỗi đỉnh trong đồ thị tượng trưng cho nơi giao nhau giữa 2 lối đi - các lối đi được biểu diễn bằng các đoạn thẳng.
+          Gọi nơi xuất phát mà ta đang đứng là đỉnh <b>s</b>, hãy đánh dấu <b>s</b> bằng một ký hiệu <b>X</b> - biểu thị cho việc <b>đã đi qua s</b>. Ta sẽ gọi chung tên cho các đỉnh hiện tại mà ta đang đứng
+          sau mỗi lần đi là đỉnh <b>c</b>. Ta khám phá mê cung đồ thị bằng việc xem xét một đoạn đường <b>(c,n)</b>nối liền đỉnh <b>c</b> với một đỉnh <b>n</b> kề đó, nếu đoạn đường <b>(c,n)</b> này dẫn ta đến với một đỉnh <b>n</b> chưa được đánh dấu <b>X</b> ta
+          thực hiện quy trình tiến đến <b>n</b>, chọn <b>n</b> là đỉnh hiện tại, đánh dấu <b>X</b> rồi lặp lại quy trình này khi đi đến các đỉnh khác trong đồ thị, ngược lại - <b>n</b> là đỉnh chưa được đánh dấu <b>X</b> thì ta sẽ phải chọn một con đường khác để đi . Nếu bạn may mắn thì sau một vài bước bạn sẽ tìm được lối ra, nếu không rất có thể bạn sẽ gặp
+          phải một ngõ cụt - không còn đường đi tiếp hoặc là các con đường cạnh đó đều dần tới các đỉnh đã đi qua. Để thoát khỏi ngõ cụt ta sẽ phải quay lui <b>Backtracking</b> men theo con đường đã dẫn ta đến
+          đỉnh <b>c</b> hiện tại để về đỉnh <b>c</b> trước đó mà ta đã đi qua. Ta lại chọn đỉnh này là đỉnh hiện tại và lặp lại quá trình tìm đỉnh kế tiếp dựa trên các con đường kề với đỉnh <b>c</b> mà ta chưa đi qua trước đó. Hãy hy vọng rằng mê cung
+          này có lối ra, bằng không chắc chắn rằng bạn sẽ quay lui trở về điểm xuất phát - khi mà tất cả các con đường kề nó đều đã được đi qua và đều dẫn tới các ngõ cụt.
+        </dd>
+    </li>
+    <li>
+      <dl>
+        <dt>Quá trình duyệt đồ thị G theo thuật toán DFS, xuât phát từ đỉnh A :<br>
+            (Data Structures and Algorithms in C++, 2nd Edition : Chapter 13, p.608)</dt>
+        <dd>
+          <p>-> Các cạnh đã đi qua được thể hiện bằng đường nét liền, các cạnh đã đi qua mà phải quay trở về lại được thể hiện bằng đường nét đứt.</p>
+          <ul>
+            <li>a. Đồ thị đầu vào</li>
+            <li>b. Hướng đi qua các cạnh bắt nguồn từ đỉnh A cho đến khi gặp cạnh (B,A), ta phải quay lui lại. </li>
+            <p><img src=":/images/DFS_a_b.png" alt="DFS_a_b"></p>
+            <li>c. Gặp đỉnh F - một ngõ cụt, ta tiếp tục quay lui.</li>
+            <li>d. Sau khi quay lui trở về C, ta tiếp tục quá trình tìm đường đi với cạnh (C,G), ta lại gặp phải một ngõ cụt tại J.</li>
+            <p><img src=":/images/DFS_c_d.png" alt="DFS_c_d"></p>
+            <li>e. Quay lui trở về G.</li>
+            <li>f. Quay lui trở về N, lúc này ta đã đi qua hết tất cả các đỉnh và các cạnh của đồ thị G, thuật toán kết thúc.</li>
+            <p><img src=":/images/DFS_e_f.png" alt="DFS_e_f"></p>
+          </ul>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <p>Cho G là một đồ thị với m đỉnh và n cạnh được lưu dưới dạng danh sách liền kề. Với thuật toán DFS, việc duyệt đồ thì sẽ tốn một khoảnh thòi gian là O(n+m) do đó thuật toán DFS có thể giải quyết các vấn đề sau trong thời gian O(n+m): </p>
+      <ol>
+        <li>Kiểm tra tính liên thông của đồ thị G.</li>
+        <li>Tìm cây khung của đồ thị G(nếu G liên thông).</li>
+        <p>->VD: Sử dụng DFS để xác định cây khung của một đồ thị G<br>
+             (Discrete Mathematics and Its applications 7th edition: Chapter 11, p.788)</p>
+        <p><img src=":/images/DFS_figure_6_7.png" alt="DFS figure 6 - 7"></p>
+        <li>Tìm các thành phần liên thông của G.</li>
+        <li>Tìm đường đi giữa hai đỉnh bất kỳ trong một đồ thị(nếu tồn tại đường đi giữa chúng) - phục vụ cho nhiều thuật toán khác.</li>
+        <li>Xác đinh sự tồn tại của chu trình trong một đồ thị.</li>
+      </ol>
+    </li>
+  </ul>
+</body>
+
+</html>

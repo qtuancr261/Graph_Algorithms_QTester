@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/EulerFigure1.png</file>
+        <file>images/icoGame.jpg</file>
+        <file>images/icosianPuzze.png</file>
+        <file>images/molecules13.png</file>
+        <file>images/WilliamRowanHamilton.jpg</file>
+        <file>images/dfsbfs.ico</file>
+        <file>url/dfs.html</file>
+        <file>images/DFS_a_b.png</file>
+        <file>images/DFS_c_d.png</file>
+        <file>images/DFS_e_f.png</file>
+        <file>images/DFS_figure_6_7.png</file>
+        <file>url/dfs_code.html</file>
+        <file>images/aboutAppAct.ico</file>
+        <file>images/appIcon.ico</file>
+        <file>images/graphDesignMode.ico</file>
+        <file>images/helpAct.ico</file>
+        <file>images/mainFunctAct.ico</file>
+        <file>images/newFileAct.ico</file>
+        <file>images/newWinAct.ico</file>
+        <file>images/openFileAct.ico</file>
+        <file>images/openFolderAct.ico</file>
+        <file>images/optionsAct.ico</file>
+        <file>images/quitApp.ico</file>
+        <file>images/QtIcon.png</file>
+        <file>images/viewContentsAct.ico</file>
+        <file>images/welcomeScreenAct.ico</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KPModuleWidget</class>
+ <widget class="QWidget" name="KPModuleWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>749</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QGroupBox" name="IODataBox">
+     <property name="title">
+      <string>Nạp đồ thị</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="1" rowspan="4">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="3" column="1">
+         <widget class="QRadioButton" name="directedButton">
+          <property name="text">
+           <string>Có hướng</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">graphTypes</string>
+          </attribute>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QComboBox" name="algoComboBox">
+          <item>
+           <property name="text">
+            <string>Kruskal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Prim</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QLineEdit" name="filePathLineEdit"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="edgesListButton">
+          <property name="text">
+           <string>Danh sách cạnh cung</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">dataTypes</string>
+          </attribute>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QRadioButton" name="undirectedButton">
+          <property name="text">
+           <string>Vô hướng</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">graphTypes</string>
+          </attribute>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QRadioButton" name="adjMatrixButton">
+          <property name="text">
+           <string>Ma trận kề</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">dataTypes</string>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="grapTypeLabel">
+        <property name="text">
+         <string>Dạng đồ thị:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="algoLabel">
+        <property name="text">
+         <string>Chọn Thuật toán:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="dataTypeLabel">
+        <property name="text">
+         <string>Cấu trúc mô tả đồ thị:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="loadFileButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Nạp file dữ liệu:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="processDataBox">
+     <property name="title">
+      <string>Thao tác với các thuật toán</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="2,1" columnstretch="1,2" rowminimumheight="0,0" columnminimumwidth="0,0">
+      <item row="0" column="0">
+       <widget class="QToolBox" name="toolBox">
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="infoPage">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>234</width>
+           <height>170</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Thông tin thuật toán</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="infoButton">
+            <property name="text">
+             <string>Thông tin cơ bản</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="analysisButton">
+            <property name="text">
+             <string>Phân tích - Đánh giá</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="appsButton">
+            <property name="text">
+             <string>Ứng dụng</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="processPage">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>234</width>
+           <height>170</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Thao tác với thuật toán</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="solveMinSpanTreeButton">
+            <property name="text">
+             <string>Tìm cây khung nhỏ nhất</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="solveLanNetworkButton">
+            <property name="text">
+             <string>Bài toán kết nối mạng Lan</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="1" rowspan="2">
+       <widget class="QTextBrowser" name="textBrowser"/>
+      </item>
+      <item row="1" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>166</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="dataTypes"/>
+  <buttongroup name="graphTypes"/>
+ </buttongroups>
+</ui>

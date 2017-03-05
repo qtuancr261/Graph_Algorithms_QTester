@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DFS-Procedure</title>
+</head>
+
+<body>
+  <h2>MÃ GIẢI DFS </h2>
+  <ol>
+    <li>
+      <p>Thủ tục chung cho việc sử dụng DFS cho việc duyệt một đồ thị liên thông:</p>
+      <ul>
+        <li>Input: Đồ thị G và một đỉnh s(đỉnh bắt đầu thăm) thuộc G</li>
+        <li>Output: Thứ tự các đỉnh được thăm theo thứ tự duyệt của thuật toán DFS</li>
+        <li>
+          <p>Hàm DFS duyệt thành phần liên thông: </p>
+          <pre>
+          <code>
+          void DFS(Đồ thị <var>G</var>, Đỉnh <var>c</var>)
+          {
+              <var>c</var>.visited = true; // đánh dấu c đã được duyệt qua
+              output <var>c</var>;
+              for (mỗi đỉnh <var>n</var> liền kề với đỉnh <var>c</var>)
+                  if (!<var>n</var>.visited) DFS(<var>G,n</var>); // gọi đệ quy hàm DFS đối với các đỉnh n liền kề với đỉnh c mà n chưa được duyệt
+          }
+          </code>
+          </pre>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Một số lưu ý khi sử dụng DFS:</p>
+      <ul>
+        <li>Khi sử dụng thuật toán DFS trên một đồ thị tùy ý, ta cần chý ý để tránh gặp phải các chu trình dẫn đến việc tồn tại vòng lặp vô hạn. <br>
+           -> Để làm việc này, mỗi lần thăm một đỉnh nào đó - ta sẽ đánh dấu đỉnh đó đã được duyệt và việc gọi đề quy chỉ xảy ra đối với các đỉnh chưa được duyệt.</li>
+        <li>Đối với dạng đồ thị vô hướng không liên thông hoặc dạng có hướng không liên thông mạnh, sẽ có một số đỉnh bị bỏ sót khi duyệt.<br>
+           -> Ta cần tìm các đỉnh chưa được duyệt sau mỗi lần duyệt một thành phần liên thông, áp dụng lại việc duyệt theo chiều sâu tại đó, tiếp tục quá trình cho đến khi
+              tất cả các đỉnh đều đã được duyệt.</li>
+      </ul>
+    </li>
+  </ol>
+
+</body>
+
+</html>
